@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54838/Customer.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://localhost:54838/Customer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ShipmentRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="BOLImage" nillable="true" type="q1:ArrayOfNullableOfunsignedByte" />
+      <xs:element minOccurs="0" name="Components" nillable="true" type="tns:ArrayOfShipmentRequestComponents" />
+      <xs:element minOccurs="0" name="ExtSysTrxLine" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderLoadReviewEnabled" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplyPointCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SysTrxLine" type="xs:int" />
+      <xs:element minOccurs="0" name="SysTrxNo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TrailerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShipmentRequest" nillable="true" type="tns:ShipmentRequest" />
+  <xs:complexType name="ArrayOfShipmentRequestComponents">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShipmentRequestComponents" nillable="true" type="tns:ShipmentRequestComponents" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShipmentRequestComponents" nillable="true" type="tns:ArrayOfShipmentRequestComponents" />
+  <xs:complexType name="ShipmentRequestComponents">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BOLDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BOLEndDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BOLImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="BOLNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BOLQtyVarianceReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtSysTrxLine" type="xs:int" />
+      <xs:element minOccurs="0" name="GrossQty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NetQty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SupplierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplyPointCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrailerCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShipmentRequestComponents" nillable="true" type="tns:ShipmentRequestComponents" />
+  <xs:complexType name="ShipmentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderLoadReviewEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShipDocSysTrxLine" type="xs:int" />
+      <xs:element minOccurs="0" name="ShipDocSysTrxNo" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShipmentResponse" nillable="true" type="tns:ShipmentResponse" />
+  <xs:complexType name="DeliveryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BOLWaitTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BOLWaitTimeTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Diversion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Diversion_Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfDeliveryRequestItems" />
+      <xs:element minOccurs="0" name="MinimumLoad" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinimumLoad_Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderLoadReviewEnabled" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Other_Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PumpOut" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PumpOut_Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignatureDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SignatureImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="SignatureStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteWaitTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SiteWaitTime_Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteWaitTime_End" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SiteWaitTime_Start" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SplitDrop" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SplitDrop_Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SplitLoad" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SplitLoad_Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SysTrxNo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeliveryRequest" nillable="true" type="tns:DeliveryRequest" />
+  <xs:complexType name="ArrayOfDeliveryRequestItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeliveryRequestItems" nillable="true" type="tns:DeliveryRequestItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeliveryRequestItems" nillable="true" type="tns:ArrayOfDeliveryRequestItems" />
+  <xs:complexType name="DeliveryRequestItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AfterVolume" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BOLNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeforeVolume" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DelivDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeliveryImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DeliveryImagePdf" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DeliveryQtyVarianceReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrossQty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NetQty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OrderItemID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ShipDocSysTrxLine" type="xs:int" />
+      <xs:element minOccurs="0" name="ShipDocSysTrxNo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SysLineNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeliveryRequestItems" nillable="true" type="tns:DeliveryRequestItems" />
+  <xs:complexType name="TWBOLDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BOLDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BOLHdrID" type="ser:guid" />
+      <xs:element minOccurs="0" name="BOLItemDetails" nillable="true" type="tns:ArrayOfTWBOLItemDetails" />
+      <xs:element minOccurs="0" name="BOLNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientID" type="ser:guid" />
+      <xs:element minOccurs="0" name="SupplierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplyPointCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TWBOLDetails" nillable="true" type="tns:TWBOLDetails" />
+  <xs:complexType name="ArrayOfTWBOLItemDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TWBOLItemDetails" nillable="true" type="tns:TWBOLItemDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTWBOLItemDetails" nillable="true" type="tns:ArrayOfTWBOLItemDetails" />
+  <xs:complexType name="TWBOLItemDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompartmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="GrossQty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NetQty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderedQty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProdCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystrxLine" type="xs:int" />
+      <xs:element minOccurs="0" name="SystrxNo" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TWBOLItemDetails" nillable="true" type="tns:TWBOLItemDetails" />
+</xs:schema>

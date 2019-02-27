@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54838/Customer.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" />
+  <xs:import schemaLocation="http://localhost:54838/Customer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="UpdateLoad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="loadNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vehicleID" type="xs:int" />
+        <xs:element minOccurs="0" name="driverID" type="xs:int" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLoadResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLoadStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="loadNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="loadStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLoadStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SysTrxNo" type="xs:decimal" />
+        <xs:element minOccurs="0" name="orderStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" minOccurs="0" name="shipmentReq" nillable="true" type="q1:ShipmentRequest" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" minOccurs="0" name="UpdateShipmentResult" nillable="true" type="q2:ShipmentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDeliveryDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" minOccurs="0" name="deliveryReq" nillable="true" type="q3:DeliveryRequest" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDeliveryDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateDeliveryDetailsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTWBOLS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" minOccurs="0" name="twbolDetailsReq" nillable="true" type="q4:TWBOLDetails" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" minOccurs="0" name="twbolitemDetailsReq" nillable="true" type="q5:TWBOLItemDetails" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTWBOLSResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWagonShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" minOccurs="0" name="shipmentReq" nillable="true" type="q6:TWBOLDetails" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWagonShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateWagonShipmentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EODInventoryProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inClientID" type="xs:int" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inToSite" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inSupplierCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inSupplyPtCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inProductCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inOrgQty" type="xs:decimal" />
+        <xs:element minOccurs="0" name="inAvailableQty" type="xs:decimal" />
+        <xs:element minOccurs="0" name="inNetQty" type="xs:decimal" />
+        <xs:element minOccurs="0" name="inOrderSysTrxNo" type="xs:int" />
+        <xs:element minOccurs="0" name="inOrderSysTrxLineNo" type="xs:int" />
+        <xs:element minOccurs="0" name="invehicleID" type="xs:int" />
+        <xs:element minOccurs="0" name="inDriverID" type="xs:int" />
+        <xs:element minOccurs="0" name="inUserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inBOLNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inBOLDtTm" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="inBOLSessionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inOverShort" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EODInventoryProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EODInventoryProcessResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFreightBreakdown">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SysTrxNo" type="xs:int" />
+        <xs:element minOccurs="0" name="FrtBrkdownline" type="xs:int" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="LegType" type="q7:char" />
+        <xs:element minOccurs="0" name="OriginCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DestinationCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OriginState" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DestinationState" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CalcMiles" type="xs:decimal" />
+        <xs:element minOccurs="0" name="ActualMiles" type="xs:decimal" />
+        <xs:element minOccurs="0" name="OriginLat" type="xs:decimal" />
+        <xs:element minOccurs="0" name="OriginLong" type="xs:decimal" />
+        <xs:element minOccurs="0" name="DestLat" type="xs:decimal" />
+        <xs:element minOccurs="0" name="DestLong" type="xs:decimal" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFreightBreakdownResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBOLImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bolimage" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="BOLImagePdf" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="SystrxNo" type="xs:int" />
+        <xs:element minOccurs="0" name="Bolno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBOLImageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderPONo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SystrxNo" type="xs:int" />
+        <xs:element minOccurs="0" name="PONo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderPONoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UndoShipDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SystrxNo" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="inStatus" type="q8:char" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UndoShipDocResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRejectedLoads">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loadNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rejectedNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRejectedLoadsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDeliveryNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sysTrsNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deliveryNotes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDeliveryNotesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBOLWaitTimeDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SysTrxNo" type="xs:decimal" />
+        <xs:element minOccurs="0" name="BOLNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BOLWaitTimeStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="BOLWaitTimeEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="BOLWaitTimeComment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VersionNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBOLWaitTimeDetailsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

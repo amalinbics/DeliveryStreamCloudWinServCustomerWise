@@ -1,0 +1,2293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CloudService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICloudService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.2.54:8089/DST/Cloud.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.2.54:8089/DST/Cloud.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.2.54:8089/DST/Cloud.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DeliveryStreamCloudWCF.Entities" />
+      <xsd:import schemaLocation="http://192.168.2.54:8089/DST/Cloud.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICloudService_GetBOLDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBOLDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBOLDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBOLDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateRejectedLoads_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRejectedLoads" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateRejectedLoads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRejectedLoadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddVehicleCompartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddVehicleCompartment" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddVehicleCompartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddVehicleCompartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetVehicleCompartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCompartment" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetVehicleCompartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCompartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLHdrWagon_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLHdrWagon" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLHdrWagon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLHdrWagonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLItemWagon_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLItemWagon" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLItemWagon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLItemWagonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBolitemWagons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBolitemWagons" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBolitemWagons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBolitemWagonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSupplierAndSupplierSupplyPt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierAndSupplierSupplyPt" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSupplierAndSupplierSupplyPt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierAndSupplierSupplyPtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddSuppliers_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddSuppliers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddSupplierSupplyPt_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSupplierSupplyPt" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddSupplierSupplyPt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSupplierSupplyPtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSupplierSupplyPtProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierSupplyPtProducts" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSupplierSupplyPtProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierSupplyPtProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLItemHdrWagon_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLItemHdrWagon" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLItemHdrWagon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLItemHdrWagonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProducts" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetWagonLoads_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWagonLoads" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetWagonLoads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWagonLoadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLItemHdrWagon1_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLItemHdrWagon1" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLItemHdrWagon1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLItemHdrWagon1Response" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLItemHdrWagonXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLItemHdrWagonXML" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBOLItemHdrWagonXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBOLItemHdrWagonXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetProductCompartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCompartment" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetProductCompartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCompartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetTWDeliveryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTWDeliveryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetTWDeliveryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTWDeliveryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddTWDeliveryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTWDeliveryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddTWDeliveryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTWDeliveryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetEODDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEODDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetEODDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEODDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedEODDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedEODDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedEODDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedEODDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedBODDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedBODDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedBODDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedBODDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedEmptyBODEODDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedEmptyBODEODDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedEmptyBODEODDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedEmptyBODEODDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBODDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBODDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBODDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBODDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetINSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetINSite" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetINSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetINSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddINSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddINSite" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddINSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddINSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetTWLineFlushProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTWLineFlushProducts" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetTWLineFlushProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTWLineFlushProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedTWLineFlushDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedTWLineFlushDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedTWLineFlushDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedTWLineFlushDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddTWDeliveryDetailsXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTWDeliveryDetailsXML" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddTWDeliveryDetailsXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTWDeliveryDetailsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedEODDetailXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedEODDetailXML" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedEODDetailXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedEODDetailXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedBODDetailXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedBODDetailXML" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedBODDetailXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedBODDetailXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddTWVehicleType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTWVehicleType" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddTWVehicleType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTWVehicleTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetTWVehicles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTWVehicles" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetTWVehicles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTWVehiclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedTWTruckToTruckTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedTWTruckToTruckTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdatedTWTruckToTruckTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedTWTruckToTruckTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDSTWHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDSTWHistory" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDSTWHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDSTWHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateSignatureStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSignatureStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateSignatureStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSignatureStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateUndispatchLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUndispatchLoad" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateUndispatchLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUndispatchLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateLoadUndispatchedStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoadUndispatchedStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateLoadUndispatchedStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoadUndispatchedStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateWareHouseUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWareHouseUser" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateWareHouseUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWareHouseUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateFromSiteBSRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFromSiteBSRule" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateFromSiteBSRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFromSiteBSRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateFromSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFromSite" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateFromSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFromSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateOrderSuppliersupplyPt_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderSuppliersupplyPt" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateOrderSuppliersupplyPt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderSuppliersupplyPtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLoad" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_DeleteLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLoad" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_DeleteLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddShipmentDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddShipmentDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddShipmentDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddShipmentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddShipmentDetailsXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddShipmentDetailsXML" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddShipmentDetailsXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddShipmentDetailsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddShipmentXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddShipmentXML" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddShipmentXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddShipmentXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateStuckLoads_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStuckLoads" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateStuckLoads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStuckLoadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddDeliveryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeliveryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddDeliveryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeliveryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddDeliveryDetailsXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeliveryDetailsXML" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddDeliveryDetailsXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeliveryDetailsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddOrderFrt_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderFrt" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddOrderFrt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderFrtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddPreDutyInspectionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPreDutyInspectionDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddPreDutyInspectionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPreDutyInspectionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddPostDutyInspectionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPostDutyInspectionDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddPostDutyInspectionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPostDutyInspectionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddAdverseConditionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAdverseConditionDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddAdverseConditionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAdverseConditionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddSleeperRigTimeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSleeperRigTimeDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddSleeperRigTimeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSleeperRigTimeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddLoginSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLoginSession" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddLoginSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLoginSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddTruckFuelingDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTruckFuelingDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddTruckFuelingDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTruckFuelingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_ç_InputMessage">
+    <wsdl:part name="parameters" element="tns:ç" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_ç_OutputMessage">
+    <wsdl:part name="parameters" element="tns:çResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddSignatureImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSignatureImage" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddSignatureImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSignatureImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddOrUpdateOrderPickingDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateOrderPickingDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddOrUpdateOrderPickingDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateOrderPickingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_DeleteOrderPickingDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderPickingDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_DeleteOrderPickingDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderPickingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBreakDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBreakDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddBreakDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBreakDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateBreakDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBreakDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateBreakDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBreakDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddInspectionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInspectionDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddInspectionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddInspectionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddDOTOverRideDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDOTOverRideDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddDOTOverRideDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDOTOverRideDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddDriverTimeExceptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDriverTimeExceptions" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddDriverTimeExceptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDriverTimeExceptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AppExceptionReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppExceptionReport" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AppExceptionReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppExceptionReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetVersionTestingData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionTestingData" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetVersionTestingData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionTestingDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateFSDriverLogSched_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFSDriverLogSched" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateFSDriverLogSched_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFSDriverLogSchedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDeliveryData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryData" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDeliveryData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateFrtBreakdown_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFrtBreakdown" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateFrtBreakdown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFrtBreakdownResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateBolImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBolImage" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateBolImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBolImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateDeliveryDateSort_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryDateSort" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateDeliveryDateSort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryDateSortResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateBOLImageVolumeStartEndBOLRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBOLImageVolumeStartEndBOLRule" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateBOLImageVolumeStartEndBOLRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBOLImageVolumeStartEndBOLRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBOLHdrDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBOLHdrDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBOLHdrDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBOLHdrDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_DeleteFromSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFromSite" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_DeleteFromSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFromSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckUserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserLogin" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckUserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckUserLogin2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserLogin2" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckUserLogin2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserLogin2Response" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckUserLogin3_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserLogin3" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckUserLogin3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserLogin3Response" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckUserLogin4_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserLogin4" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckUserLogin4_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserLogin4Response" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckCustomerLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCustomerLogin" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CheckCustomerLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCustomerLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetLoginHomeTerminalDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginHomeTerminalDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetLoginHomeTerminalDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginHomeTerminalDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetUnAssignedOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnAssignedOrders" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetUnAssignedOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnAssignedOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_EndPreviousLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndPreviousLogin" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_EndPreviousLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndPreviousLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateOrderDipatchHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderDipatchHistory" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateOrderDipatchHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderDipatchHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddOrderDipatchHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderDipatchHistory" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AddOrderDipatchHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderDipatchHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetLoads_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoads" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetLoads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetWareHouseLoads_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWareHouseLoads" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetWareHouseLoads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWareHouseLoadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetOrderCountByStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountByStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetOrderCountByStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountByStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetLoadStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoadStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetLoadStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetOrderStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetOrderStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBolHdrs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBolHdrs" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBolHdrs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBolHdrsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBolitems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBolitems" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetBolitems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBolitemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDeliveryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDeliveryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetOrderFrts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderFrts" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetOrderFrts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderFrtsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSignatureImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSignatureImage" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSignatureImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSignatureImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetPickedOrderItemDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPickedOrderItemDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetPickedOrderItemDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPickedOrderItemDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDriverDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDriverDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetVehicleDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetVehicleDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetInspectionElementsID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInspectionElementsID" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetInspectionElementsID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInspectionElementsIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_IsSessionIDExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSessionIDExist" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_IsSessionIDExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSessionIDExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_ListOFLoadNosToMerge_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOFLoadNosToMerge" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_ListOFLoadNosToMerge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOFLoadNosToMergeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_ListOFOrderNosToUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOFOrderNosToUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_ListOFOrderNosToUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOFOrderNosToUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSupplierFromSiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierFromSiteList" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSupplierFromSiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplierFromSiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetShipToBasedFromSiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipToBasedFromSiteList" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetShipToBasedFromSiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipToBasedFromSiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetLastLogoffTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastLogoffTime" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetLastLogoffTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastLogoffTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDriverSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverSummary" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDriverSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetRemainingTimeSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainingTimeSummary" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetRemainingTimeSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainingTimeSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CummulativeGetDriverSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:CummulativeGetDriverSummary" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_CummulativeGetDriverSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CummulativeGetDriverSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSummaryLogInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSummaryLogInformation" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetSummaryLogInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSummaryLogInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDriverLogStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverLogStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_GetDriverLogStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverLogStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateGPSHistoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGPSHistoryList" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateGPSHistoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGPSHistoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AcceptAndShippedWarehouseLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptAndShippedWarehouseLoad" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_AcceptAndShippedWarehouseLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptAndShippedWarehouseLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateGPSHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGPSHistory" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateGPSHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGPSHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateLoadStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoadStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateLoadStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateOrderStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateOrderStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateDriver_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDriver" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateDriver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ICloudService_UpdateVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVehicleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICloudService">
+    <wsdl:operation name="GetBOLDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetBOLDetails" message="tns:ICloudService_GetBOLDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetBOLDetailsResponse" message="tns:ICloudService_GetBOLDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRejectedLoads">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateRejectedLoads" message="tns:ICloudService_UpdateRejectedLoads_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateRejectedLoadsResponse" message="tns:ICloudService_UpdateRejectedLoads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVehicleCompartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddVehicleCompartment" message="tns:ICloudService_AddVehicleCompartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddVehicleCompartmentResponse" message="tns:ICloudService_AddVehicleCompartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCompartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetVehicleCompartment" message="tns:ICloudService_GetVehicleCompartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetVehicleCompartmentResponse" message="tns:ICloudService_GetVehicleCompartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLHdrWagon">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddBOLHdrWagon" message="tns:ICloudService_AddBOLHdrWagon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddBOLHdrWagonResponse" message="tns:ICloudService_AddBOLHdrWagon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLItemWagon">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddBOLItemWagon" message="tns:ICloudService_AddBOLItemWagon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddBOLItemWagonResponse" message="tns:ICloudService_AddBOLItemWagon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBolitemWagons">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetBolitemWagons" message="tns:ICloudService_GetBolitemWagons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetBolitemWagonsResponse" message="tns:ICloudService_GetBolitemWagons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierAndSupplierSupplyPt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetSupplierAndSupplierSupplyPt" message="tns:ICloudService_GetSupplierAndSupplierSupplyPt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetSupplierAndSupplierSupplyPtResponse" message="tns:ICloudService_GetSupplierAndSupplierSupplyPt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSuppliers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddSuppliers" message="tns:ICloudService_AddSuppliers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddSuppliersResponse" message="tns:ICloudService_AddSuppliers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSupplierSupplyPt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddSupplierSupplyPt" message="tns:ICloudService_AddSupplierSupplyPt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddSupplierSupplyPtResponse" message="tns:ICloudService_AddSupplierSupplyPt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierSupplyPtProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetSupplierSupplyPtProducts" message="tns:ICloudService_GetSupplierSupplyPtProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetSupplierSupplyPtProductsResponse" message="tns:ICloudService_GetSupplierSupplyPtProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLItemHdrWagon">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddBOLItemHdrWagon" message="tns:ICloudService_AddBOLItemHdrWagon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddBOLItemHdrWagonResponse" message="tns:ICloudService_AddBOLItemHdrWagon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddProducts" message="tns:ICloudService_AddProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddProductsResponse" message="tns:ICloudService_AddProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWagonLoads">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetWagonLoads" message="tns:ICloudService_GetWagonLoads_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetWagonLoadsResponse" message="tns:ICloudService_GetWagonLoads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLItemHdrWagon1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddBOLItemHdrWagon1" message="tns:ICloudService_AddBOLItemHdrWagon1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddBOLItemHdrWagon1Response" message="tns:ICloudService_AddBOLItemHdrWagon1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLItemHdrWagonXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddBOLItemHdrWagonXML" message="tns:ICloudService_AddBOLItemHdrWagonXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddBOLItemHdrWagonXMLResponse" message="tns:ICloudService_AddBOLItemHdrWagonXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCompartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetProductCompartment" message="tns:ICloudService_GetProductCompartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetProductCompartmentResponse" message="tns:ICloudService_GetProductCompartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTWDeliveryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetTWDeliveryDetails" message="tns:ICloudService_GetTWDeliveryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetTWDeliveryDetailsResponse" message="tns:ICloudService_GetTWDeliveryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTWDeliveryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddTWDeliveryDetails" message="tns:ICloudService_AddTWDeliveryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddTWDeliveryDetailsResponse" message="tns:ICloudService_AddTWDeliveryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEODDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetEODDetails" message="tns:ICloudService_GetEODDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetEODDetailsResponse" message="tns:ICloudService_GetEODDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedEODDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdatedEODDetail" message="tns:ICloudService_UpdatedEODDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdatedEODDetailResponse" message="tns:ICloudService_UpdatedEODDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedBODDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdatedBODDetail" message="tns:ICloudService_UpdatedBODDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdatedBODDetailResponse" message="tns:ICloudService_UpdatedBODDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedEmptyBODEODDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdatedEmptyBODEODDetails" message="tns:ICloudService_UpdatedEmptyBODEODDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdatedEmptyBODEODDetailsResponse" message="tns:ICloudService_UpdatedEmptyBODEODDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBODDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetBODDetails" message="tns:ICloudService_GetBODDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetBODDetailsResponse" message="tns:ICloudService_GetBODDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetINSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetINSite" message="tns:ICloudService_GetINSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetINSiteResponse" message="tns:ICloudService_GetINSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddINSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddINSite" message="tns:ICloudService_AddINSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddINSiteResponse" message="tns:ICloudService_AddINSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTWLineFlushProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetTWLineFlushProducts" message="tns:ICloudService_GetTWLineFlushProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetTWLineFlushProductsResponse" message="tns:ICloudService_GetTWLineFlushProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedTWLineFlushDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdatedTWLineFlushDetail" message="tns:ICloudService_UpdatedTWLineFlushDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdatedTWLineFlushDetailResponse" message="tns:ICloudService_UpdatedTWLineFlushDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTWDeliveryDetailsXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddTWDeliveryDetailsXML" message="tns:ICloudService_AddTWDeliveryDetailsXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddTWDeliveryDetailsXMLResponse" message="tns:ICloudService_AddTWDeliveryDetailsXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedEODDetailXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdatedEODDetailXML" message="tns:ICloudService_UpdatedEODDetailXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdatedEODDetailXMLResponse" message="tns:ICloudService_UpdatedEODDetailXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedBODDetailXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdatedBODDetailXML" message="tns:ICloudService_UpdatedBODDetailXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdatedBODDetailXMLResponse" message="tns:ICloudService_UpdatedBODDetailXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTWVehicleType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddTWVehicleType" message="tns:ICloudService_AddTWVehicleType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddTWVehicleTypeResponse" message="tns:ICloudService_AddTWVehicleType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTWVehicles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetTWVehicles" message="tns:ICloudService_GetTWVehicles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetTWVehiclesResponse" message="tns:ICloudService_GetTWVehicles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedTWTruckToTruckTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdatedTWTruckToTruckTransfer" message="tns:ICloudService_UpdatedTWTruckToTruckTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdatedTWTruckToTruckTransferResponse" message="tns:ICloudService_UpdatedTWTruckToTruckTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDSTWHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetDSTWHistory" message="tns:ICloudService_GetDSTWHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetDSTWHistoryResponse" message="tns:ICloudService_GetDSTWHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSignatureStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateSignatureStatus" message="tns:ICloudService_UpdateSignatureStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateSignatureStatusResponse" message="tns:ICloudService_UpdateSignatureStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUndispatchLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateUndispatchLoad" message="tns:ICloudService_UpdateUndispatchLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateUndispatchLoadResponse" message="tns:ICloudService_UpdateUndispatchLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoadUndispatchedStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateLoadUndispatchedStatus" message="tns:ICloudService_UpdateLoadUndispatchedStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateLoadUndispatchedStatusResponse" message="tns:ICloudService_UpdateLoadUndispatchedStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWareHouseUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateWareHouseUser" message="tns:ICloudService_UpdateWareHouseUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateWareHouseUserResponse" message="tns:ICloudService_UpdateWareHouseUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFromSiteBSRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateFromSiteBSRule" message="tns:ICloudService_UpdateFromSiteBSRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateFromSiteBSRuleResponse" message="tns:ICloudService_UpdateFromSiteBSRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFromSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateFromSite" message="tns:ICloudService_UpdateFromSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateFromSiteResponse" message="tns:ICloudService_UpdateFromSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderSuppliersupplyPt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateOrderSuppliersupplyPt" message="tns:ICloudService_UpdateOrderSuppliersupplyPt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateOrderSuppliersupplyPtResponse" message="tns:ICloudService_UpdateOrderSuppliersupplyPt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddLoad" message="tns:ICloudService_AddLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddLoadResponse" message="tns:ICloudService_AddLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/DeleteLoad" message="tns:ICloudService_DeleteLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/DeleteLoadResponse" message="tns:ICloudService_DeleteLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShipmentDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddShipmentDetails" message="tns:ICloudService_AddShipmentDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddShipmentDetailsResponse" message="tns:ICloudService_AddShipmentDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShipmentDetailsXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddShipmentDetailsXML" message="tns:ICloudService_AddShipmentDetailsXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddShipmentDetailsXMLResponse" message="tns:ICloudService_AddShipmentDetailsXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShipmentXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddShipmentXML" message="tns:ICloudService_AddShipmentXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddShipmentXMLResponse" message="tns:ICloudService_AddShipmentXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStuckLoads">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateStuckLoads" message="tns:ICloudService_UpdateStuckLoads_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateStuckLoadsResponse" message="tns:ICloudService_UpdateStuckLoads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDeliveryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddDeliveryDetails" message="tns:ICloudService_AddDeliveryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddDeliveryDetailsResponse" message="tns:ICloudService_AddDeliveryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDeliveryDetailsXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddDeliveryDetailsXML" message="tns:ICloudService_AddDeliveryDetailsXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddDeliveryDetailsXMLResponse" message="tns:ICloudService_AddDeliveryDetailsXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderFrt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddOrderFrt" message="tns:ICloudService_AddOrderFrt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddOrderFrtResponse" message="tns:ICloudService_AddOrderFrt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPreDutyInspectionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddPreDutyInspectionDetails" message="tns:ICloudService_AddPreDutyInspectionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddPreDutyInspectionDetailsResponse" message="tns:ICloudService_AddPreDutyInspectionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPostDutyInspectionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddPostDutyInspectionDetails" message="tns:ICloudService_AddPostDutyInspectionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddPostDutyInspectionDetailsResponse" message="tns:ICloudService_AddPostDutyInspectionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdverseConditionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddAdverseConditionDetails" message="tns:ICloudService_AddAdverseConditionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddAdverseConditionDetailsResponse" message="tns:ICloudService_AddAdverseConditionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSleeperRigTimeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddSleeperRigTimeDetails" message="tns:ICloudService_AddSleeperRigTimeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddSleeperRigTimeDetailsResponse" message="tns:ICloudService_AddSleeperRigTimeDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLoginSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddLoginSession" message="tns:ICloudService_AddLoginSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddLoginSessionResponse" message="tns:ICloudService_AddLoginSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTruckFuelingDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddTruckFuelingDetails" message="tns:ICloudService_AddTruckFuelingDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddTruckFuelingDetailsResponse" message="tns:ICloudService_AddTruckFuelingDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ç">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/ç" message="tns:ICloudService_ç_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/çResponse" message="tns:ICloudService_ç_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSignatureImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddSignatureImage" message="tns:ICloudService_AddSignatureImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddSignatureImageResponse" message="tns:ICloudService_AddSignatureImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateOrderPickingDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddOrUpdateOrderPickingDetails" message="tns:ICloudService_AddOrUpdateOrderPickingDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddOrUpdateOrderPickingDetailsResponse" message="tns:ICloudService_AddOrUpdateOrderPickingDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderPickingDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/DeleteOrderPickingDetails" message="tns:ICloudService_DeleteOrderPickingDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/DeleteOrderPickingDetailsResponse" message="tns:ICloudService_DeleteOrderPickingDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBreakDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddBreakDetails" message="tns:ICloudService_AddBreakDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddBreakDetailsResponse" message="tns:ICloudService_AddBreakDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBreakDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateBreakDetails" message="tns:ICloudService_UpdateBreakDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateBreakDetailsResponse" message="tns:ICloudService_UpdateBreakDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInspectionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddInspectionDetails" message="tns:ICloudService_AddInspectionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddInspectionDetailsResponse" message="tns:ICloudService_AddInspectionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDOTOverRideDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddDOTOverRideDetails" message="tns:ICloudService_AddDOTOverRideDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddDOTOverRideDetailsResponse" message="tns:ICloudService_AddDOTOverRideDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDriverTimeExceptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddDriverTimeExceptions" message="tns:ICloudService_AddDriverTimeExceptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddDriverTimeExceptionsResponse" message="tns:ICloudService_AddDriverTimeExceptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/Logout" message="tns:ICloudService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/LogoutResponse" message="tns:ICloudService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppExceptionReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AppExceptionReport" message="tns:ICloudService_AppExceptionReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AppExceptionReportResponse" message="tns:ICloudService_AppExceptionReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionTestingData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetVersionTestingData" message="tns:ICloudService_GetVersionTestingData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetVersionTestingDataResponse" message="tns:ICloudService_GetVersionTestingData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFSDriverLogSched">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateFSDriverLogSched" message="tns:ICloudService_UpdateFSDriverLogSched_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateFSDriverLogSchedResponse" message="tns:ICloudService_UpdateFSDriverLogSched_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetDeliveryData" message="tns:ICloudService_GetDeliveryData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetDeliveryDataResponse" message="tns:ICloudService_GetDeliveryData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFrtBreakdown">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateFrtBreakdown" message="tns:ICloudService_UpdateFrtBreakdown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateFrtBreakdownResponse" message="tns:ICloudService_UpdateFrtBreakdown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBolImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateBolImage" message="tns:ICloudService_UpdateBolImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateBolImageResponse" message="tns:ICloudService_UpdateBolImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryDateSort">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateDeliveryDateSort" message="tns:ICloudService_UpdateDeliveryDateSort_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateDeliveryDateSortResponse" message="tns:ICloudService_UpdateDeliveryDateSort_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBOLImageVolumeStartEndBOLRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateBOLImageVolumeStartEndBOLRule" message="tns:ICloudService_UpdateBOLImageVolumeStartEndBOLRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateBOLImageVolumeStartEndBOLRuleResponse" message="tns:ICloudService_UpdateBOLImageVolumeStartEndBOLRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBOLHdrDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetBOLHdrDetails" message="tns:ICloudService_GetBOLHdrDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetBOLHdrDetailsResponse" message="tns:ICloudService_GetBOLHdrDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/DeleteFromSite" message="tns:ICloudService_DeleteFromSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/DeleteFromSiteResponse" message="tns:ICloudService_DeleteFromSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/CheckUserLogin" message="tns:ICloudService_CheckUserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/CheckUserLoginResponse" message="tns:ICloudService_CheckUserLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/CheckUserLogin2" message="tns:ICloudService_CheckUserLogin2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/CheckUserLogin2Response" message="tns:ICloudService_CheckUserLogin2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin3">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/CheckUserLogin3" message="tns:ICloudService_CheckUserLogin3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/CheckUserLogin3Response" message="tns:ICloudService_CheckUserLogin3_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin4">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/CheckUserLogin4" message="tns:ICloudService_CheckUserLogin4_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/CheckUserLogin4Response" message="tns:ICloudService_CheckUserLogin4_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/CheckCustomerLogin" message="tns:ICloudService_CheckCustomerLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/CheckCustomerLoginResponse" message="tns:ICloudService_CheckCustomerLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginHomeTerminalDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetLoginHomeTerminalDetails" message="tns:ICloudService_GetLoginHomeTerminalDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetLoginHomeTerminalDetailsResponse" message="tns:ICloudService_GetLoginHomeTerminalDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnAssignedOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetUnAssignedOrders" message="tns:ICloudService_GetUnAssignedOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetUnAssignedOrdersResponse" message="tns:ICloudService_GetUnAssignedOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EndPreviousLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/EndPreviousLogin" message="tns:ICloudService_EndPreviousLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/EndPreviousLoginResponse" message="tns:ICloudService_EndPreviousLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDipatchHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateOrderDipatchHistory" message="tns:ICloudService_UpdateOrderDipatchHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateOrderDipatchHistoryResponse" message="tns:ICloudService_UpdateOrderDipatchHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDipatchHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AddOrderDipatchHistory" message="tns:ICloudService_AddOrderDipatchHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AddOrderDipatchHistoryResponse" message="tns:ICloudService_AddOrderDipatchHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoads">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetLoads" message="tns:ICloudService_GetLoads_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetLoadsResponse" message="tns:ICloudService_GetLoads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWareHouseLoads">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetWareHouseLoads" message="tns:ICloudService_GetWareHouseLoads_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetWareHouseLoadsResponse" message="tns:ICloudService_GetWareHouseLoads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCountByStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetOrderCountByStatus" message="tns:ICloudService_GetOrderCountByStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetOrderCountByStatusResponse" message="tns:ICloudService_GetOrderCountByStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoadStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetLoadStatus" message="tns:ICloudService_GetLoadStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetLoadStatusResponse" message="tns:ICloudService_GetLoadStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetOrderStatus" message="tns:ICloudService_GetOrderStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetOrderStatusResponse" message="tns:ICloudService_GetOrderStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBolHdrs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetBolHdrs" message="tns:ICloudService_GetBolHdrs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetBolHdrsResponse" message="tns:ICloudService_GetBolHdrs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBolitems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetBolitems" message="tns:ICloudService_GetBolitems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetBolitemsResponse" message="tns:ICloudService_GetBolitems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetDeliveryDetails" message="tns:ICloudService_GetDeliveryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetDeliveryDetailsResponse" message="tns:ICloudService_GetDeliveryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderFrts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetOrderFrts" message="tns:ICloudService_GetOrderFrts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetOrderFrtsResponse" message="tns:ICloudService_GetOrderFrts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSignatureImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetSignatureImage" message="tns:ICloudService_GetSignatureImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetSignatureImageResponse" message="tns:ICloudService_GetSignatureImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPickedOrderItemDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetPickedOrderItemDetails" message="tns:ICloudService_GetPickedOrderItemDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetPickedOrderItemDetailsResponse" message="tns:ICloudService_GetPickedOrderItemDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetDriverDetails" message="tns:ICloudService_GetDriverDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetDriverDetailsResponse" message="tns:ICloudService_GetDriverDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetVehicleDetails" message="tns:ICloudService_GetVehicleDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetVehicleDetailsResponse" message="tns:ICloudService_GetVehicleDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInspectionElementsID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetInspectionElementsID" message="tns:ICloudService_GetInspectionElementsID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetInspectionElementsIDResponse" message="tns:ICloudService_GetInspectionElementsID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSessionIDExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/IsSessionIDExist" message="tns:ICloudService_IsSessionIDExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/IsSessionIDExistResponse" message="tns:ICloudService_IsSessionIDExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOFLoadNosToMerge">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/ListOFLoadNosToMerge" message="tns:ICloudService_ListOFLoadNosToMerge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/ListOFLoadNosToMergeResponse" message="tns:ICloudService_ListOFLoadNosToMerge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOFOrderNosToUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/ListOFOrderNosToUpdate" message="tns:ICloudService_ListOFOrderNosToUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/ListOFOrderNosToUpdateResponse" message="tns:ICloudService_ListOFOrderNosToUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierFromSiteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetSupplierFromSiteList" message="tns:ICloudService_GetSupplierFromSiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetSupplierFromSiteListResponse" message="tns:ICloudService_GetSupplierFromSiteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipToBasedFromSiteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetShipToBasedFromSiteList" message="tns:ICloudService_GetShipToBasedFromSiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetShipToBasedFromSiteListResponse" message="tns:ICloudService_GetShipToBasedFromSiteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastLogoffTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetLastLogoffTime" message="tns:ICloudService_GetLastLogoffTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetLastLogoffTimeResponse" message="tns:ICloudService_GetLastLogoffTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetDriverSummary" message="tns:ICloudService_GetDriverSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetDriverSummaryResponse" message="tns:ICloudService_GetDriverSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingTimeSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetRemainingTimeSummary" message="tns:ICloudService_GetRemainingTimeSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetRemainingTimeSummaryResponse" message="tns:ICloudService_GetRemainingTimeSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CummulativeGetDriverSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/CummulativeGetDriverSummary" message="tns:ICloudService_CummulativeGetDriverSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/CummulativeGetDriverSummaryResponse" message="tns:ICloudService_CummulativeGetDriverSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryLogInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetSummaryLogInformation" message="tns:ICloudService_GetSummaryLogInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetSummaryLogInformationResponse" message="tns:ICloudService_GetSummaryLogInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverLogStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/GetDriverLogStatus" message="tns:ICloudService_GetDriverLogStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/GetDriverLogStatusResponse" message="tns:ICloudService_GetDriverLogStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGPSHistoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateGPSHistoryList" message="tns:ICloudService_UpdateGPSHistoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateGPSHistoryListResponse" message="tns:ICloudService_UpdateGPSHistoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptAndShippedWarehouseLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/AcceptAndShippedWarehouseLoad" message="tns:ICloudService_AcceptAndShippedWarehouseLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/AcceptAndShippedWarehouseLoadResponse" message="tns:ICloudService_AcceptAndShippedWarehouseLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGPSHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateGPSHistory" message="tns:ICloudService_UpdateGPSHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateGPSHistoryResponse" message="tns:ICloudService_UpdateGPSHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoadStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateLoadStatus" message="tns:ICloudService_UpdateLoadStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateLoadStatusResponse" message="tns:ICloudService_UpdateLoadStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateOrderStatus" message="tns:ICloudService_UpdateOrderStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateOrderStatusResponse" message="tns:ICloudService_UpdateOrderStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDriver">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateDriver" message="tns:ICloudService_UpdateDriver_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateDriverResponse" message="tns:ICloudService_UpdateDriver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICloudService/UpdateVehicle" message="tns:ICloudService_UpdateVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICloudService/UpdateVehicleResponse" message="tns:ICloudService_UpdateVehicle_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ICloudService" type="tns:ICloudService">
+    <wsp:PolicyReference URI="#WSHttpBinding_ICloudService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBOLDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetBOLDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRejectedLoads">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateRejectedLoads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVehicleCompartment">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddVehicleCompartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCompartment">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetVehicleCompartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLHdrWagon">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddBOLHdrWagon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLItemWagon">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddBOLItemWagon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBolitemWagons">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetBolitemWagons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierAndSupplierSupplyPt">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetSupplierAndSupplierSupplyPt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSuppliers">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddSuppliers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSupplierSupplyPt">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddSupplierSupplyPt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierSupplyPtProducts">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetSupplierSupplyPtProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLItemHdrWagon">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddBOLItemHdrWagon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProducts">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWagonLoads">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetWagonLoads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLItemHdrWagon1">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddBOLItemHdrWagon1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBOLItemHdrWagonXML">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddBOLItemHdrWagonXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCompartment">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetProductCompartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTWDeliveryDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetTWDeliveryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTWDeliveryDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddTWDeliveryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEODDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetEODDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedEODDetail">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdatedEODDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedBODDetail">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdatedBODDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedEmptyBODEODDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdatedEmptyBODEODDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBODDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetBODDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetINSite">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetINSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddINSite">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddINSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTWLineFlushProducts">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetTWLineFlushProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedTWLineFlushDetail">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdatedTWLineFlushDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTWDeliveryDetailsXML">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddTWDeliveryDetailsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedEODDetailXML">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdatedEODDetailXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedBODDetailXML">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdatedBODDetailXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTWVehicleType">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddTWVehicleType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTWVehicles">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetTWVehicles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedTWTruckToTruckTransfer">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdatedTWTruckToTruckTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDSTWHistory">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetDSTWHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSignatureStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateSignatureStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUndispatchLoad">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateUndispatchLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoadUndispatchedStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateLoadUndispatchedStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWareHouseUser">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateWareHouseUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFromSiteBSRule">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateFromSiteBSRule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFromSite">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateFromSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderSuppliersupplyPt">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateOrderSuppliersupplyPt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLoad">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLoad">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/DeleteLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShipmentDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddShipmentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShipmentDetailsXML">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddShipmentDetailsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShipmentXML">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddShipmentXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStuckLoads">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateStuckLoads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeliveryDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddDeliveryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeliveryDetailsXML">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddDeliveryDetailsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderFrt">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddOrderFrt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPreDutyInspectionDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddPreDutyInspectionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPostDutyInspectionDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddPostDutyInspectionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdverseConditionDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddAdverseConditionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSleeperRigTimeDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddSleeperRigTimeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLoginSession">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddLoginSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTruckFuelingDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddTruckFuelingDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ç">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/ç" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSignatureImage">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddSignatureImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateOrderPickingDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddOrUpdateOrderPickingDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderPickingDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/DeleteOrderPickingDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBreakDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddBreakDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBreakDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateBreakDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInspectionDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddInspectionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDOTOverRideDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddDOTOverRideDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDriverTimeExceptions">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddDriverTimeExceptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppExceptionReport">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AppExceptionReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionTestingData">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetVersionTestingData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFSDriverLogSched">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateFSDriverLogSched" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryData">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetDeliveryData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFrtBreakdown">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateFrtBreakdown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBolImage">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateBolImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryDateSort">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateDeliveryDateSort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBOLImageVolumeStartEndBOLRule">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateBOLImageVolumeStartEndBOLRule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBOLHdrDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetBOLHdrDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromSite">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/DeleteFromSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/CheckUserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin2">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/CheckUserLogin2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin3">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/CheckUserLogin3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin4">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/CheckUserLogin4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerLogin">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/CheckCustomerLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginHomeTerminalDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetLoginHomeTerminalDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnAssignedOrders">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetUnAssignedOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndPreviousLogin">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/EndPreviousLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDipatchHistory">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateOrderDipatchHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDipatchHistory">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AddOrderDipatchHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoads">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetLoads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWareHouseLoads">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetWareHouseLoads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCountByStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetOrderCountByStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoadStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetLoadStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBolHdrs">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetBolHdrs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBolitems">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetBolitems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetDeliveryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderFrts">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetOrderFrts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSignatureImage">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetSignatureImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPickedOrderItemDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetPickedOrderItemDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetDriverDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetVehicleDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInspectionElementsID">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetInspectionElementsID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSessionIDExist">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/IsSessionIDExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListOFLoadNosToMerge">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/ListOFLoadNosToMerge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListOFOrderNosToUpdate">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/ListOFOrderNosToUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierFromSiteList">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetSupplierFromSiteList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipToBasedFromSiteList">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetShipToBasedFromSiteList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastLogoffTime">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetLastLogoffTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverSummary">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetDriverSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingTimeSummary">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetRemainingTimeSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CummulativeGetDriverSummary">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/CummulativeGetDriverSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryLogInformation">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetSummaryLogInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverLogStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/GetDriverLogStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGPSHistoryList">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateGPSHistoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptAndShippedWarehouseLoad">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/AcceptAndShippedWarehouseLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGPSHistory">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateGPSHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoadStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateLoadStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDriver">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicle">
+      <soap12:operation soapAction="http://tempuri.org/ICloudService/UpdateVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CloudService">
+    <wsdl:port name="WSHttpBinding_ICloudService" binding="tns:WSHttpBinding_ICloudService">
+      <soap12:address location="http://192.168.2.54:8089/DST/Cloud.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://192.168.2.54:8089/DST/Cloud.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

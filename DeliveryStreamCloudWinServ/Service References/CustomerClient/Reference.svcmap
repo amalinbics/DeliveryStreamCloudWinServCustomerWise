@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8abb2232-e1d0-4690-91db-f89313de29eb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.2.54:8089/DST/Cloud.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Cloud.xsd" MetadataType="Schema" ID="6f4f2aab-aaae-4f82-a885-9207cc521cd6" SourceId="1" SourceUrl="http://192.168.2.54:8089/DST/Cloud.svc?xsd=xsd1" />
+    <MetadataFile FileName="Cloud.disco" MetadataType="Disco" ID="cb825e40-78b4-4223-9708-f652a1b12d30" SourceId="1" SourceUrl="http://192.168.2.54:8089/DST/Cloud.svc?disco" />
+    <MetadataFile FileName="Cloud1.xsd" MetadataType="Schema" ID="a4350678-bd24-477d-8032-02ee55af14ea" SourceId="1" SourceUrl="http://192.168.2.54:8089/DST/Cloud.svc?xsd=xsd0" />
+    <MetadataFile FileName="Cloud2.xsd" MetadataType="Schema" ID="cbabd4ce-5978-491c-968c-bdffe92918d2" SourceId="1" SourceUrl="http://192.168.2.54:8089/DST/Cloud.svc?xsd=xsd2" />
+    <MetadataFile FileName="Cloud3.xsd" MetadataType="Schema" ID="06a867b0-1e4f-4007-a5a4-2b3b7b1e3e69" SourceId="1" SourceUrl="http://192.168.2.54:8089/DST/Cloud.svc?xsd=xsd3" />
+    <MetadataFile FileName="CloudService.wsdl" MetadataType="Wsdl" ID="992a17c0-8a4d-46e8-8eca-23fe6c9f157a" SourceId="1" SourceUrl="http://192.168.2.54:8089/DST/Cloud.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

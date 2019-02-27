@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CustomerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICustomerService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54838/Customer.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54838/Customer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54838/Customer.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DeliveryStreamCustomerWCF.Entities" />
+      <xsd:import schemaLocation="http://localhost:54838/Customer.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICustomerService_UpdateLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoad" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateLoadStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoadStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateLoadStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateOrderStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateOrderStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShipment" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateDeliveryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateDeliveryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_InsertTWBOLS_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTWBOLS" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_InsertTWBOLS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTWBOLSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateWagonShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWagonShipment" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateWagonShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWagonShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_EODInventoryProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:EODInventoryProcess" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_EODInventoryProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EODInventoryProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateFreightBreakdown_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFreightBreakdown" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateFreightBreakdown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFreightBreakdownResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateBOLImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBOLImage" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateBOLImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBOLImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateOrderPONo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderPONo" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateOrderPONo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderPONoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UndoShipDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:UndoShipDoc" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UndoShipDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UndoShipDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateRejectedLoads_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRejectedLoads" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateRejectedLoads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRejectedLoadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateDeliveryNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryNotes" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateDeliveryNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateBOLWaitTimeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBOLWaitTimeDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_UpdateBOLWaitTimeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBOLWaitTimeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICustomerService">
+    <wsdl:operation name="UpdateLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateLoad" message="tns:ICustomerService_UpdateLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateLoadResponse" message="tns:ICustomerService_UpdateLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoadStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateLoadStatus" message="tns:ICustomerService_UpdateLoadStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateLoadStatusResponse" message="tns:ICustomerService_UpdateLoadStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateOrderStatus" message="tns:ICustomerService_UpdateOrderStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateOrderStatusResponse" message="tns:ICustomerService_UpdateOrderStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateShipment" message="tns:ICustomerService_UpdateShipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateShipmentResponse" message="tns:ICustomerService_UpdateShipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateDeliveryDetails" message="tns:ICustomerService_UpdateDeliveryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateDeliveryDetailsResponse" message="tns:ICustomerService_UpdateDeliveryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTWBOLS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/InsertTWBOLS" message="tns:ICustomerService_InsertTWBOLS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/InsertTWBOLSResponse" message="tns:ICustomerService_InsertTWBOLS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWagonShipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateWagonShipment" message="tns:ICustomerService_UpdateWagonShipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateWagonShipmentResponse" message="tns:ICustomerService_UpdateWagonShipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EODInventoryProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/EODInventoryProcess" message="tns:ICustomerService_EODInventoryProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/EODInventoryProcessResponse" message="tns:ICustomerService_EODInventoryProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFreightBreakdown">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateFreightBreakdown" message="tns:ICustomerService_UpdateFreightBreakdown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateFreightBreakdownResponse" message="tns:ICustomerService_UpdateFreightBreakdown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBOLImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateBOLImage" message="tns:ICustomerService_UpdateBOLImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateBOLImageResponse" message="tns:ICustomerService_UpdateBOLImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderPONo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateOrderPONo" message="tns:ICustomerService_UpdateOrderPONo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateOrderPONoResponse" message="tns:ICustomerService_UpdateOrderPONo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UndoShipDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UndoShipDoc" message="tns:ICustomerService_UndoShipDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UndoShipDocResponse" message="tns:ICustomerService_UndoShipDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRejectedLoads">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateRejectedLoads" message="tns:ICustomerService_UpdateRejectedLoads_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateRejectedLoadsResponse" message="tns:ICustomerService_UpdateRejectedLoads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryNotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateDeliveryNotes" message="tns:ICustomerService_UpdateDeliveryNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateDeliveryNotesResponse" message="tns:ICustomerService_UpdateDeliveryNotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBOLWaitTimeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/UpdateBOLWaitTimeDetails" message="tns:ICustomerService_UpdateBOLWaitTimeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/UpdateBOLWaitTimeDetailsResponse" message="tns:ICustomerService_UpdateBOLWaitTimeDetails_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ICustomerService" type="tns:ICustomerService">
+    <wsp:PolicyReference URI="#WSHttpBinding_ICustomerService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateLoad">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoadStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateLoadStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipment">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateDeliveryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTWBOLS">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/InsertTWBOLS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWagonShipment">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateWagonShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EODInventoryProcess">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/EODInventoryProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFreightBreakdown">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateFreightBreakdown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBOLImage">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateBOLImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderPONo">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateOrderPONo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UndoShipDoc">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UndoShipDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRejectedLoads">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateRejectedLoads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryNotes">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateDeliveryNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBOLWaitTimeDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerService/UpdateBOLWaitTimeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerService">
+    <wsdl:port name="WSHttpBinding_ICustomerService" binding="tns:WSHttpBinding_ICustomerService">
+      <soap12:address location="http://localhost:54838/Customer.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:54838/Customer.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
